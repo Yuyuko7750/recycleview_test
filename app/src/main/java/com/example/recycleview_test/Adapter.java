@@ -14,23 +14,9 @@ import java.util.Date;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.InnerHolder> {
-    private ArrayList<data> data;
-    public Adapter(ArrayList<data> data){
+    private ArrayList<Text> data;
+    public Adapter(ArrayList<Text> data){
         this.data=data;
-    }
-
-    public static class InnerHolder extends RecyclerView.ViewHolder{
-        TextView name;
-        TextView time;
-        TextView message;
-        ImageView picture;
-        public InnerHolder(@NonNull View itemView){
-            super(itemView);
-            name = (TextView) itemView.findViewById(R.id.name);
-            message = (TextView)itemView.findViewById(R.id.message);
-            time = (TextView)itemView.findViewById(R.id.time);
-            picture = (ImageView) itemView.findViewById(R.id.picture);
-        }
     }
     @NonNull
     @Override
@@ -42,9 +28,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.InnerHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull InnerHolder holder, int position) {
-        holder.picture.setImageResource(R.drawable.Ava);
-        holder.picture.setImageResource(R.drawable.Bella);
-        
         holder.name.setText(data.get(position).getName());
         holder.time.setText(data.get(position).getTime());
         holder.message.setText(data.get(position).getMessage());
@@ -52,5 +35,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.InnerHolder> {
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+
+    public static class InnerHolder extends RecyclerView.ViewHolder{
+        TextView name;
+        TextView time;
+        TextView message;
+        ImageView picture;
+        public InnerHolder(@NonNull View itemView){
+            super(itemView);
+            name = (TextView) itemView.findViewById(R.id.name);
+            message = (TextView)itemView.findViewById(R.id.message);
+            time = (TextView)itemView.findViewById(R.id.time);
+
+        }
     }
 }
