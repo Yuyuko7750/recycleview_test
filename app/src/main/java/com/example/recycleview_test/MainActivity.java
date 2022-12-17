@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,19 +20,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         ArrayList<Text>data=new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+
+
             Text myText = new Text();
-            myText.setName("水果" + i);
-            myText.setMessage("好");
+            myText.setName("Ava");
+            myText.setMessage("Avava AvA给你一拳！！！");
+            myText.setTime("2022.6.12");
+            Text ava=new Text("Ava",R.drawable.ava);
             data.add(myText);
-        }
+
         Adapter Adapter = new Adapter(data);
         recyclerView.setAdapter(Adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
-
-
-
 
 }

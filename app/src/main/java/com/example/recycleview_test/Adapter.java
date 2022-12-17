@@ -31,6 +31,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.InnerHolder> {
         holder.name.setText(data.get(position).getName());
         holder.time.setText(data.get(position).getTime());
         holder.message.setText(data.get(position).getMessage());
+        holder.iv.setImageResource(data.get(position).getImageId());
     }
     @Override
     public int getItemCount() {
@@ -42,7 +43,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.InnerHolder> {
         TextView name;
         TextView time;
         TextView message;
-        ImageView picture;
+        ImageView iv;
         public InnerHolder(@NonNull View itemView){
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.name);
